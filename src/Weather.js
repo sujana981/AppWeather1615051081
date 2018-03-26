@@ -1,10 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, TextInput, Button, Image } from 'react-native';
 
-const windIcon = require('./img/wind.png');
-const tempIcon = require('./img/temp.png');
-const mainIcon = require('./img/main.png');
-const levelIcon = require('./img/sea.png');
+
 
 export default class Weather extends React.Component {
 constructor(props) {
@@ -54,10 +51,10 @@ let url = 'http://api.openweathermap.org/data/2.5/weather?q='+ this.state.city +
     return (
     <View style={styles.containerMain}>
       <View style={styles.box2}>
-          <Text style={{ textAlign: 'center'}}> Masukan Nama Kota </Text>
+          <Text style={{ textAlign: 'center', paddingTop: 15,fontSize: 20 }}> Masukan Nama Kota </Text>
           <TextInput
-                style={{ height: 40,width: 300, textAlign: 'center', color: 'black'}}
-              placeholder="input "
+                style={{ height: 40,width: 300,textAlign:'center', color: 'white'}}
+              placeholder=" masukan nama kota"
               onChangeText={(city) => this.setState({ city })}
             />
             <Button
@@ -73,23 +70,14 @@ let url = 'http://api.openweathermap.org/data/2.5/weather?q='+ this.state.city +
           <Text> City : { this.state.city} </Text>
         </View>
         <View style={styles.button}>
-        <View style={styles.iconContainer}>
-          <Image source={tempIcon} style={styles.icon} />
-       </View>
           <Text> Temp : { this.state.forecast.temp} </Text>
         </View>
       </View>
       <View style={styles.box4}>
         <View style={styles.button}>
-        <View style={styles.iconContainer}>
-          <Image source={mainIcon} style={styles.icon} />
-       </View>
           <Text> Main : { this.state.forecast.main} </Text>
         </View>
         <View style={styles.button}>
-        <View style={styles.iconContainer}>
-          <Image source={mainIcon} style={styles.icon} />
-       </View>
           <Text> Main Desc : { this.state.forecast.description} </Text>
         </View>
       </View>
@@ -119,8 +107,7 @@ const styles = StyleSheet.create({
   },
   box3: {
     flex: 0.5,
-    backgroundColor: 'white',
-    //marginTop: 10,
+    backgroundColor: '#90CAF9',
     marginLeft: 10,
     marginRight: 10,
     justifyContent: 'space-around',
@@ -130,7 +117,6 @@ const styles = StyleSheet.create({
   box4: {
     flex: 0.3,
     backgroundColor: 'white',
-    //marginTop: 10,
     marginLeft: 10,
     marginRight: 10,
     justifyContent: 'space-around',
@@ -147,7 +133,7 @@ const styles = StyleSheet.create({
     height: 40,
     justifyContent: 'flex-start',
     alignItems: 'center',
-    backgroundColor: '#228B22',
+    backgroundColor: '#9CCC65',
     flexDirection: 'row'
   },
   iconContainer: {
